@@ -1,4 +1,4 @@
-'''
+"""
 삼성전자에 입사한 종민이는 회사 근처로 이사를 하게 되었다.
 그런데 집의 위치가 두 수도 회사 A,B 중간에 위치하기에 원하는 수도 회사를 선택할 수 있게 되었는데,
 두 회사 중 더 적게 수도 요금을 부담해도 되는 회사를 고르려고 한다.
@@ -15,24 +15,22 @@ B사: 기본 요금이 Q원이고, 월간 사용량이 R리터 이하인 경우 
 2
 9 100 20 3 10
 8 300 100 10 250
- 
+
 
 [출력]
-각 테스트 케이스마다  ‘#x’(x는 테스트케이스 번호를 의미하며 1부터 시작한다)를 출력하고, 
+각 테스트 케이스마다  ‘#x’(x는 테스트케이스 번호를 의미하며 1부터 시작한다)를 출력하고,
 종민이가 내야 하는 수도 요금을 출력한다.
 #1 90
 #2 1800
-    '''
+"""
+
 T = int(input())
-for test_case in range(1,T+1):
-    P,Q,R,S,W=map(int,input().split())
-    A_company = W*P
-    if W>R:
-        B_company= Q+S*(W-R)
+for test_case in range(1, T + 1):
+    P, Q, R, S, W = map(int, input().split())
+    A_company = W * P
+    if W > R:
+        B_company = Q + S * (W - R)
     else:
         B_company = Q
-    if A_company<=B_company:
-        ans=A_company
-    else:
-        ans=B_company
-    print(f"#{test_case} {ans}") 
+    ans = min(A_company, B_company)
+    print(f"#{test_case} {ans}")

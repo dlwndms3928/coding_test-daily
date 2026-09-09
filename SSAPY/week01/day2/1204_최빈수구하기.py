@@ -1,4 +1,4 @@
-'''
+"""
 어느 고등학교에서 실시한 1000명의 수학 성적을 토대로 통계 자료를 만들려고 한다.
 이때, 이 학교에서는 최빈수를 이용하여 학생들의 평균 수준을 짐작하는데,
 여기서 최빈수는 특정 자료에서 가장 여러번 나타내는 값을 의미한다.
@@ -17,17 +17,18 @@
 
 [출력]
 #부호와 함께 테스트 케이스의 번호를 출력하고, 공백 문자 후 테스트 케이스에 대한 답을 출력한다.
-'''
+"""
+
 T = int(input())
-for test_case in range(1,T+1):
+for test_case in range(1, T + 1):
     _ = input()
-    test = list(map(int,input().split()))
+    test = list(map(int, input().split()))
     count_list = [0] * 101
     max_freq = 0
     mode = 0
-    for i in test :
+    for i in test:
         count_list[i] += 1
-    for j in range(100,-1,-1):
+    for j in range(100, -1, -1):
         if count_list[j] > max_freq:
             max_freq = count_list[j]
             mode = j

@@ -32,6 +32,7 @@ for test_case in range(1, T + 1):
     if Bun >= 60:
         Si += Bun // 60
         Bun %= 60
-    if Si > 12:
-        Si -= 12
+    Si = Si % 12
+    if Si == 0:
+        Si = 12
     print(f"#{test_case} {Si} {Bun}")
